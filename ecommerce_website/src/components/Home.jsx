@@ -21,8 +21,7 @@ const Home = () => {
           <div className=" mt-6 pt-2">
             <h1 className="text-xl">
               clothLand: Where Style Meets <br /> Adventure Threads & Trends
-              Explore Cloth Land clothLand: Where Style Meets <br /> Adventure
-              Threads & Trends Explore Cloth Land
+              Explore Cloth Land
             </h1>
           </div>
           <button className="w-[140px] bg-[red] text-white font-bold text-xl rounded-md py-1">
