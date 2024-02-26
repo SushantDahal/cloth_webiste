@@ -1,7 +1,8 @@
 import Logo from "../assets/Logo.png";
+
 const Navbar = () => {
   return (
-    <div className="w-full  h-18 fixed  top-0">
+    <div className="w-full  h-18 sticky  top-[-12px]">
       <div className="w-[1240px] mx-auto bg-white flex justify-between items-center py-1 ">
         <img src={Logo} className="w-[200px] md" alt="" />
         <div className="">

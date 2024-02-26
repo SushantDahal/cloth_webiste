@@ -5,7 +5,7 @@ import Huba from "../assets/huba.png";
 import Kasa from "../assets/kasa.png";
 const Brands = () => {
   return (
-    <div className="w-full bg-black mb-8">
+    <div className="w-full bg-black mb-4">
       <div className="grid sm:grid-cols-5 gap-4 h-[200px] mx-6">
         <div>
           <img src={Nike} className="w-[200px]" alt="" />

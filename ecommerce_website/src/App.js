@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Brands from "./components/Brands";
+import Newarivals from "./components/newarrivals/New_Arrivals";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <Home />
       <Brands />
+      <Newarivals />
     </div>
   );
 }
