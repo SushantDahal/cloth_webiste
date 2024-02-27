@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Brands from "./components/Brands";
 import Newarivals from "./components/newarrivals/New_Arrivals";
+import Best_Seller from "./components/bestseller/Best_Seller";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Home />
       <Brands />
       <Newarivals />
+      <Best_Seller />
     </div>
   );
 }
