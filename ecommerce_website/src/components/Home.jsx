@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className="w-full h-auto mt-16 ">
       <div className="max-w-[1240px] mx-auto grid md:grid-cols-2 gap-6 overflow-hidden">
-        <div className=" mx-auto my-20 text-center text-5xl text-[black] font-bold py-8">
+        <div className=" mx-auto my-20 text-center text-5xl text-[black] font-bold md:py-8 py-2">
           <div className=" h-[100px] w-full uppercase">
             <Typewriter
               words={[
@@ -28,8 +28,8 @@ const Home = () => {
             Shop Now
           </button>
         </div>
-        <div className=" mx-2 py-8">
-          <img src={HomeImage} alt="" />
+        <div className=" mx-2 md:py-8 py-2">
+          <img src={HomeImage} alt="" className="min-w-[500px]" />
         </div>
       </div>
     </div>
