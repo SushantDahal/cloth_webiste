@@ -9,8 +9,8 @@ import {
 function Footer() {
   return (
     <div className="w-full text-white">
-      <div className="py-4 pt-10 grid md:grid-cols-3 h-full md:h-[300px] gap-4 bg-black ">
-        <div className=" py-2 mx-8 px-10">
+      <div className="py-4 pt-10 grid md:grid-cols-3 h-full md:h-[300px] gap-4 bg-black px-3">
+        <div className=" py-2 mx-auto px-10   col-span-3 md:col-span-1">
           <h1 className="text-3xl font-bold py-3 text-[red]">FASHION</h1>
           <p className="text-[14px]">
             Complete your style with awesome <br /> clothes from us.

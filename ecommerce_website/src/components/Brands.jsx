@@ -8,7 +8,7 @@ const Brands = () => {
   return (
     <div>
       <div className="w-full bg-black">
-        <div className="md:grid md:grid-cols-5 gap-4 items-center flex flex-col min-h-[200px] mx-6">
+        <div className="md:grid md:grid-cols-5 gap-4 items-center flex flex-col min-h-[200px]  ">
           <div>
             <img src={Nike} className="w-[200px] min-w-[170px]" alt="" />
           </div>
