@@ -1,7 +1,7 @@
 import OfferImg from "../assets/offerimg.png";
 const Offers = () => {
   return (
-    <div className="w-full bg-white ">
+    <div className="w-full bg-white  " id="Offers">
       <h1 className="text-5xl text-[red] font-bold text-center mb-4 py-3">
         OFFERS
       </h1>

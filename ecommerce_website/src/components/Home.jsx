@@ -2,7 +2,7 @@ import HomeImage from "../assets/Homeimg.jpg";
 import { Typewriter } from "react-simple-typewriter";
 const Home = () => {
   return (
-    <div className="w-full h-auto mt-16 ">
+    <div className="w-full h-auto mt-16 " id="Home">
       <div className="max-w-[1240px] mx-auto grid md:grid-cols-2 gap-6 overflow-hidden">
         <div className=" mx-auto md:my-20 my-0 text-center  px-3 text-[black] font-bold md:py-8 py-2 md:mb-0 mb-8">
           <div className=" h-[100px] w-full uppercase md:text-5xl text-3xl ">

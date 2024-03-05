@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.png";
+import { Link as ScrollLink } from "react-scroll";
 
 const Navbar = () => {
   return (
@@ -8,8 +9,28 @@ const Navbar = () => {
         <img src={Logo} className="w-[200px]" alt="" />
         <div className="">
           <ul className="md:flex hidden mr-10 font-bold cursor-pointer">
-            <li className="mx-4 text-xl  px-4 rounded-md">Home</li>
-            <li className="mx-4 text-xl  px-4 rounded-md">Offers</li>
+            <li className="mx-4 text-xl  px-4 rounded-md">
+              <ScrollLink
+                to="Home"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
+                Home
+              </ScrollLink>
+            </li>
+            <li className="mx-4 text-xl  px-4 rounded-md">
+              <ScrollLink
+                to="Offers"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
+                Offers
+              </ScrollLink>
+            </li>
             <Link to={"/Login"}>
               <li className="mx-4 text-xl  px-4 rounded-md">LogIn</li>
             </Link>
