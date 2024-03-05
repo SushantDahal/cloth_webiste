@@ -14,8 +14,8 @@ const Navbar = () => {
                 to="Home"
                 spy={true}
                 smooth={true}
-                offset={50}
-                duration={500}
+                offset={-80}
+                duration={1000}
               >
                 Home
               </ScrollLink>
@@ -25,8 +25,8 @@ const Navbar = () => {
                 to="Offers"
                 spy={true}
                 smooth={true}
-                offset={50}
-                duration={500}
+                offset={-80}
+                duration={1000}
               >
                 Offers
               </ScrollLink>
