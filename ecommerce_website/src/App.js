@@ -7,6 +7,7 @@ import Newsletter from "./components/Newsletter";
 import Offers from "./components/Offers";
 import Footer from "./components/Footer";
 import Login from "./Account/Login";
+import Signup from "./Account/Signup";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -47,7 +48,7 @@ function Loginpage() {
 function SignUpPage() {
   return (
     <>
-      <Login />
+      <Signup />
     </>
   );
 }

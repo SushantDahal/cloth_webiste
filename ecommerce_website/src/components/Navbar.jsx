@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="w-full  h-18 sticky  top-[-12px]">
       <div className="max-w-[1240px] mx-auto bg-white flex justify-between items-center py-1 ">
-        <img src={Logo} className="w-[200px] md" alt="" />
+        <img src={Logo} className="w-[200px]" alt="" />
         <div className="">
           <ul className="md:flex hidden mr-10 font-bold cursor-pointer">
             <li className="mx-4 text-xl  px-4 rounded-md">Home</li>
