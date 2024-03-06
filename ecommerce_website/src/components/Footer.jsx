@@ -16,10 +16,22 @@ function Footer() {
             Complete your style with awesome <br /> clothes from us.
           </p>
           <div className="flex gap-4 my-6 ">
-            <FaFacebookSquare size={35} />
-            <FaGitSquare size={35} />
-            <FaTwitterSquare size={35} />
-            <FaInstagram size={35} />
+            <FaFacebookSquare
+              size={45}
+              className="hover:bg-[red] hover:shadow-white shadow-xl rounded-full p-2"
+            />
+            <FaGitSquare
+              size={45}
+              className="hover:bg-[red] hover:shadow-white shadow-xl rounded-full p-2"
+            />
+            <FaTwitterSquare
+              size={45}
+              className="hover:bg-[red] hover:shadow-white shadow-xl rounded-full p-2"
+            />
+            <FaInstagram
+              size={45}
+              className="hover:bg-[red] hover:shadow-white shadow-xl rounded-full p-2"
+            />
           </div>
         </div>
         <div className="text-gray-500 flex justify-between mx-5 px-4 col-span-2">
