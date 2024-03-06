@@ -8,7 +8,7 @@ const NewarrivalCard = (props) => {
         className="object-contain max-h-[230px]  min-h-[230px] mx-auto"
       />
       <div className=" bg-black text-white px-4 rounded-md">
-        <div className=" min-h-24 ">
+        <div className=" min-h-[108px] ">
           <h3 className="text-xl font-bold pt-2">{props.name}</h3>
           <small className=" py-2 ">{props.description}</small>
         </div>

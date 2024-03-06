@@ -22,7 +22,7 @@ const Brands = () => {
             <img src={Solos} className="w-[200px]" alt="" />
           </div>
           <div>
-            <img src={Kasa} className="w-[200px] min-w-[170px]" alt="" />
+            <img src={Kasa} className="w-[200px] min-w-[200px]" alt="" />
           </div>
         </div>
       </div>
