@@ -1,7 +1,23 @@
 import OfferImg from "../assets/offerimg.png";
+import { useState, useEffect } from "react";
+
 const Offers = () => {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const hours = currentTime.getHours();
+  const minutes = currentTime.getMinutes();
+  const seconds = currentTime.getSeconds();
+
   return (
-    <div className="w-full bg-white  " id="Offers">
+    <div className="w-full bg-white" id="Offers">
       <h1 className="text-5xl text-[red] font-bold text-center mb-4 py-3">
         OFFERS
       </h1>
@@ -24,20 +40,20 @@ const Offers = () => {
             <h2 className="font-semibold pt-4 text-white">Offer expires in:</h2>
             <div className="flex gap-2 font-bold">
               <div className="py-2">
-                <h1 className="bg-white text-black py-2 px-3 ">02</h1>
+                <h1 className="bg-white text-black py-2 px-3 ">2</h1>
                 <small className="mx-1 text-[10px] text-white">days</small>
               </div>
               <div className="py-2">
-                <h1 className="bg-white text-black py-2 px-3 ">12</h1>
-                <small className="mx-1 text-[10px] text-white">Hours</small>
+                <h1 className="bg-white text-black py-2 px-3 ">{hours}</h1>
+                <small className="mx-2 text-[10px] text-white">hours</small>
               </div>
               <div className="py-2">
-                <h1 className="bg-white text-black py-2 px-3 ">45</h1>
+                <h1 className="bg-white text-black py-2 px-3 ">{minutes}</h1>
                 <small className="mx-1 text-[10px] text-white">minutes</small>
               </div>
               <div className="py-2">
-                <h1 className="bg-white text-black py-2 px-3 ">05</h1>
-                <small className="mx-1 text-[10px] text-white">Seconds</small>
+                <h1 className="bg-white text-black py-2 px-3 ">{seconds}</h1>
+                <small className="mx-1 text-[10px] text-white">seconds</small>
               </div>
             </div>
           </div>
