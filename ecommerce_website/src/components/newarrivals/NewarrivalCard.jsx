@@ -1,7 +1,7 @@
 import { FaLongArrowAltRight } from "react-icons/fa";
 const NewarrivalCard = (props) => {
   return (
-    <div className="bg-white shadow-[#000000] shadow-md  hover:translate-y-1 cursor-pointer duration-200 rounded-md">
+    <div className="bg-white shadow-[#000000] shadow-md  rounded-md">
       <img
         src={props.img}
         alt="/"
