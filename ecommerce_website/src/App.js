@@ -6,6 +6,7 @@ import Best_Seller from "./components/bestseller/Best_Seller";
 import Newsletter from "./components/Newsletter";
 import Offers from "./components/Offers";
 import Footer from "./components/Footer";
+import Product from "./components/products/Product";
 import Login from "./Account/Login";
 import Signup from "./Account/Signup";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/Login" element={<Loginpage />} />
           <Route path="/SignUp" element={<SignUpPage />} />
+          <Route path="/Products" element={<ProductSection />} />
         </Routes>
       </Router>
     </div>
@@ -34,6 +36,13 @@ function Homepage() {
       <Offers />
       <Newsletter />
       <Footer />
+    </>
+  );
+}
+function ProductSection() {
+  return (
+    <>
+      <Product />
     </>
   );
 }

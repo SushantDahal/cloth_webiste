@@ -17,14 +17,16 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? "w-[30%] lg:hidden bg-[black] text-white h-screen top-0 absolute ease-in duration-300"
+            ? "w-[40%] lg:hidden bg-[black] text-white h-screen top-0 absolute ease-in duration-300"
             : "fixed left-[-50%] ease-out duration-100"
         }
       >
         <ul className="flex justify-center mr-10 font-bold cursor-pointer flex-col items-center gap-10 mt-20">
           <li
             className={`mx-4 text-xl px-4 rounded-md ${
-              activeLink === "Home" ? "border-red-500 border" : ""
+              activeLink === "Home"
+                ? "bg-white text-black shadow-white shadow-lg"
+                : ""
             }`}
           >
             <ScrollLink
@@ -41,7 +43,9 @@ const Navbar = () => {
           </li>
           <li
             className={`mx-4 text-xl px-4 rounded-md ${
-              activeLink === "Offers" ? "border-red-500 border" : ""
+              activeLink === "Offers"
+                ? "bg-white text-black shadow-white shadow-lg"
+                : ""
             }`}
           >
             <ScrollLink
@@ -56,9 +60,13 @@ const Navbar = () => {
               Offers
             </ScrollLink>
           </li>
+          <Link to={"/Products"}>
+            <li className="mx-4 text-xl px-4 rounded-md">Products</li>
+          </Link>
           <Link to={"/Login"}>
             <li className="mx-4 text-xl px-4 rounded-md">LogIn</li>
           </Link>
+
           <Link to={"/SignUp"}>
             <li className="mx-4 text-xl px-4 rounded-md">Sign Up</li>
           </Link>
@@ -85,6 +93,7 @@ const Navbar = () => {
                 Home
               </ScrollLink>
             </li>
+
             <li
               className={`mx-4 text-xl px-4 rounded-md ${
                 activeLink === "Offers" ? "bg-[red] text-white" : ""
@@ -102,6 +111,9 @@ const Navbar = () => {
                 Offers
               </ScrollLink>
             </li>
+            <Link to={"/Products"}>
+              <li className="mx-4 text-xl px-4 rounded-md">Products</li>
+            </Link>
             <Link to={"/Login"}>
               <li className="mx-4 text-xl px-4 rounded-md">LogIn</li>
             </Link>
