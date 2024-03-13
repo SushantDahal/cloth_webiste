@@ -52,7 +52,7 @@ const Navbar = () => {
               to="Offers"
               spy={true}
               smooth={true}
-              offset={-80}
+              offset={-85}
               duration={1000}
               onClick={() => setActiveLink("Offers")}
               active={activeLink === "Offers"}
@@ -61,14 +61,14 @@ const Navbar = () => {
             </ScrollLink>
           </li>
           <Link to={"/Products"}>
-            <li className="mx-4 text-xl px-4 rounded-md">Products</li>
+            <li className="mx-4 text-xl px-4 rounded-md ">Products</li>
           </Link>
           <Link to={"/Login"}>
             <li className="mx-4 text-xl px-4 rounded-md">LogIn</li>
           </Link>
 
           <Link to={"/SignUp"}>
-            <li className="mx-4 text-xl px-4 rounded-md">Sign Up</li>
+            <li className="mx-4 text-xl px-4 rounded-md">SignUp</li>
           </Link>
         </ul>
       </div>
