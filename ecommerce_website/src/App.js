@@ -6,6 +6,7 @@ import Best_Seller from "./components/bestseller/Best_Seller";
 import Newsletter from "./components/Newsletter";
 import Offers from "./components/Offers";
 import Footer from "./components/Footer";
+import Dashboard from "./components/Dashboard";
 import Product from "./components/products/Product";
 import Login from "./Account/Login";
 import Signup from "./Account/Signup";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/Login" element={<Loginpage />} />
           <Route path="/SignUp" element={<SignUpPage />} />
           <Route path="/Products" element={<ProductSection />} />
+          <Route path="/Dashboard" element={<DashboardSection />} />
         </Routes>
       </Router>
     </div>
@@ -43,6 +45,13 @@ function ProductSection() {
   return (
     <>
       <Product />
+    </>
+  );
+}
+function DashboardSection() {
+  return (
+    <>
+      <Dashboard />
     </>
   );
 }

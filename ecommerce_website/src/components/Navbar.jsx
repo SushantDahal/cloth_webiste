@@ -114,6 +114,9 @@ const Navbar = () => {
             <Link to={"/Products"}>
               <li className="mx-4 text-xl px-4 rounded-md">Products</li>
             </Link>
+            <Link to={"/Dashboard"}>
+              <li className="mx-4 text-xl px-4 rounded-md">Dashboard</li>
+            </Link>
             <Link to={"/Login"}>
               <li className="mx-4 text-xl px-4 rounded-md">LogIn</li>
             </Link>
