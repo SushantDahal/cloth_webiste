@@ -30,7 +30,7 @@ const Offers = () => {
             <h1 className="font-bold text-[red] pt-4 text-2xl md:mt-20 mt-8">
               PROMOTION
             </h1>
-            <h1 className="text-5xl text-white font-extrabold py-3 text-center">
+            <h1 className="text-5xl text-white font-extrabold py-3 text-center md:">
               Hurry up! 40% OFF
             </h1>
             <small className="font-bold  py-2 text-[red]">

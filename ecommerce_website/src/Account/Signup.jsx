@@ -11,39 +11,57 @@ const Signup = () => {
       </Link>
       <div className="w-full bg-white ">
         <div className="grid lg:grid-cols-2 ">
-          <div className="lg:mx-5 ld:ml-20 mx-auto pl-20  py-5">
-            <img src={LoginImg} alt="" className="" />
+          <div className="lg:mx-5    py-8 lg:pt-20 ">
+            <img src={LoginImg} alt="" className="mx-auto" />
           </div>
           <div className="text-black flex flex-col max-w-[1000px] ml-24 lg:my-20 my-10 ">
             <div className="px-2">
-              <h1 className="text-2xl md:text-3xl lg:text-3xl  pt-2 font-bold px-2  ">
+              <h1 className="text-2xl md:text-3xl lg:text-3xl text-[red]  pb-6 font-bold   text-center  ">
                 Welcome to clothLand
               </h1>
             </div>
-            <div className="w-[70%]  p-2 my-2 border-b-2">
+            <div className="md:w-[70%] w-[100%] p-2 my-2 border-b-2 mx-auto">
               <form>
                 <div className="flex flex-col  px-2">
-                  <label className="text-xl font-bold py-1">Full Name</label>
+                  <label className="text-xl font-bold py-1">First Name</label>
                   <input
                     type="text"
-                    placeholder="Enter Your Email"
-                    className="bg-white rounded-md py-2 my-1 outline px-4"
+                    placeholder="First Name"
+                    className="bg-white rounded-md py-2 my-1 outline-none border-2 border-red-100 px-4"
+                  />
+                </div>
+                <div className="flex flex-col  px-2">
+                  <label className="text-xl font-bold py-1">Last Name</label>
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    className="bg-white rounded-md py-2 my-1 outline-none border-2 border-red-100 px-4"
                   />
                 </div>
                 <div className="flex flex-col  px-2">
                   <label className="text-xl font-bold py-1">Email</label>
                   <input
                     type="text"
-                    placeholder="Enter Your Email"
-                    className="bg-white rounded-md py-2 my-1 outline px-4"
+                    placeholder=" Email"
+                    className="bg-white rounded-md py-2 my-1 outline-none border-2 border-red-100 px-4"
                   />
                 </div>
                 <div className="flex flex-col  my-4 px-2">
                   <label className="text-xl font-bold py-1">Passsword</label>
                   <input
                     type="password"
-                    placeholder="Enter Your Password"
-                    className="bg-white rounded-md py-2 my-1 px-4 outline"
+                    placeholder=" Password"
+                    className="bg-white rounded-md py-2 my-1 outline-none border-2 border-red-100 px-4"
+                  />
+                </div>
+                <div className="flex flex-col  my-4 px-2">
+                  <label className="text-xl font-bold py-1">
+                    Confirm Passsword
+                  </label>
+                  <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    className="bg-white rounded-md py-2 my-1 outline-none border-2 border-red-100 px-4"
                   />
                 </div>
                 <div className="w-full text-center ">
