@@ -11,12 +11,18 @@ import { BsShop } from "react-icons/bs";
 import { GiFlowerPot } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
+import { Spiral as Hamburger } from "hamburger-react";
+
 const Dashboard = () => {
   var income = 120000;
   var customers = 120;
   const [profile, setProfile] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
   function HandleProfile() {
     setProfile(!profile);
+  }
+  function HandleSidebar() {
+    setSidebar(!sidebar);
   }
   return (
     <div className="w-full bg-white h-full ">
@@ -47,9 +53,15 @@ const Dashboard = () => {
         />
       </div>
 
-      {/*  */}
+      {/*  sidebar*/}
       <div className="flex">
-        <div className="bg-[#f8f3f3] md:w-1/5 w-0 h-screen">
+        <div
+          className={
+            !sidebar
+              ? "bg-[#f8f3f3] lg:w-1/5 w-0 h-screen duration-200"
+              : "min-w-1/5 bg-[#bb2626ce]  h-screen duration-200"
+          }
+        >
           <div className="flex flex-col items-center justify-center pt-10">
             <ul className="w-full">
               <Link to="/">
@@ -79,14 +91,22 @@ const Dashboard = () => {
             </ul>
           </div>
         </div>
+        <div className=" absolute lg:hidden py-2">
+          <Hamburger
+            size={30}
+            toggled={sidebar}
+            toggle={setSidebar}
+            className="text-black"
+          />
+        </div>
         {/* Dashboard */}
-        <div className=" mx-2 md:w-[75%] w-[100%] px-4 bg-[#e8e1e1]">
-          <h1 className="text-3xl my-4 mx-4 text-[red] font-bold">DASHBOARD</h1>
+        <div className=" mx-2 w-[100%] min-w-[300px] px-4 bg-[#e8e1e1]">
+          <h1 className="text-3xl my-4 ml-8 text-[red] font-bold">DASHBOARD</h1>
           <div className="md:w-[80%] w-full bg-white px-4 py-2">
             <div className="">
               <div className="flex justify-between  ">
                 <h1 className="text-xl font-bold ">Overview</h1>
-                <select className="bg-[#bdbbbb] py-3 px-4 outline-none rounded-md">
+                <select className="bg-[#bdbbbb] py-3 md:px-4 sm:px-2 px-0 outline-none rounded-md">
                   <option>All Time</option>
                   <option>This Month</option>
                   <option>Last 3 Month</option>
