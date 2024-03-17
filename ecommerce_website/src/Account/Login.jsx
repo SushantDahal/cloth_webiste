@@ -9,7 +9,7 @@ const Login = () => {
       <Link to="/">
         <img src={Logo} alt="" className="mx-auto px-5  py-2 w-[200px] " />
       </Link>
-      <div className="w-full bg-white ">
+      <div className="max-w-[1240px] mx-auto bg-white ">
         <div className="grid lg:grid-cols-2 ">
           <div className="text-black flex flex-col max-w-[1000px] ml-24 lg:my-20 my-10 px-6">
             <div className="px-2 lg:mx-2 mx-auto py-4">
@@ -20,7 +20,7 @@ const Login = () => {
                 Welcome back! Please enter your details.
               </small>
             </div>
-            <div className="md:w-[70%] w-[100%]  p-2 my-2 border-b-2 mx-auto lg:mx-0">
+            <div className=" w-[100%]  p-2 my-2 border-b-2 mx-auto lg:mx-0">
               <form>
                 <div className="flex flex-col  px-2">
                   <label className="text-xl font-bold py-1">Email</label>
@@ -68,7 +68,7 @@ const Login = () => {
               </form>
             </div>
           </div>
-          <div className="mx-auto lg:mx-5">
+          <div className="mx-auto lg:mx-5 px-5">
             <img src={LoginImg} alt="" className="" />
           </div>
         </div>

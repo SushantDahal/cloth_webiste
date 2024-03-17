@@ -49,7 +49,7 @@ const Dashboard = () => {
 
       {/*  */}
       <div className="flex">
-        <div className="bg-[#f8f3f3] w-1/5 h-screen">
+        <div className="bg-[#f8f3f3] md:w-1/5 w-0 h-screen">
           <div className="flex flex-col items-center justify-center pt-10">
             <ul className="w-full">
               <Link to="/">
@@ -80,9 +80,9 @@ const Dashboard = () => {
           </div>
         </div>
         {/* Dashboard */}
-        <div className=" mx-2 w-[75%] px-4 bg-[#e8e1e1]">
+        <div className=" mx-2 md:w-[75%] w-[100%] px-4 bg-[#e8e1e1]">
           <h1 className="text-3xl my-4 mx-4 text-[red] font-bold">DASHBOARD</h1>
-          <div className="w-[80%] bg-white px-4 py-2">
+          <div className="md:w-[80%] w-full bg-white px-4 py-2">
             <div className="">
               <div className="flex justify-between  ">
                 <h1 className="text-xl font-bold ">Overview</h1>

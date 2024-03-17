@@ -9,7 +9,7 @@ const Signup = () => {
       <Link to="/">
         <img src={Logo} alt="" className="mx-auto px-5  py-2 w-[200px] " />
       </Link>
-      <div className="w-full bg-white ">
+      <div className="max-w-[1240px] mx-auto bg-white ">
         <div className="grid lg:grid-cols-2 ">
           <div className="lg:mx-5    py-8 lg:pt-20 ">
             <img src={LoginImg} alt="" className="mx-auto" />
@@ -20,7 +20,7 @@ const Signup = () => {
                 Welcome to clothLand
               </h1>
             </div>
-            <div className="md:w-[70%] w-[100%] p-2 my-2 border-b-2 mx-auto">
+            <div className=" w-[100%] p-2 my-2 border-b-2 mx-auto">
               <form>
                 <div className="flex flex-col  px-2">
                   <label className="text-xl font-bold py-1">First Name</label>
