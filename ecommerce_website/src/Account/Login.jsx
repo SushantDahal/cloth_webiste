@@ -49,7 +49,7 @@ const Login = () => {
                     </label>
                   </div>
                   <p className="md:text-xs text-[12px] cursor-pointer">
-                    Forgot Password
+                    Forgot Password?
                   </p>
                 </div>
                 <button className="w-full bg-[red] text-white font-bold text-xl rounded-md py-2 my-3 cursor-pointer hover:bg-red-500 duration-150 ">
@@ -59,11 +59,13 @@ const Login = () => {
                   <img src={Google} alt="" className="w-6 mx-2" />
                   <p>Sign in with Google</p>
                 </div>
-                <p className="text-center text-[10px] py-2">
-                  Don’t have an account?{" "}
-                  <span className="text-[red] cursor-pointer">
-                    sign up fo free!
-                  </span>
+                <p className="text-center text-[18px] pt-4 py-2">
+                  Don’t have an account ?
+                  <Link to="/SignUp">
+                    <span className="text-[red] text-[16px] px-4  cursor-pointer">
+                      sign up fo free!
+                    </span>
+                  </Link>
                 </p>
               </form>
             </div>

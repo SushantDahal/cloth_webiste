@@ -70,9 +70,9 @@ const Navbar = () => {
             <li className="mx-4 text-xl px-4 rounded-md">LogIn</li>
           </Link>
 
-          <Link to={"/SignUp"}>
+          {/* <Link to={"/SignUp"}>
             <li className="mx-4 text-xl px-4 rounded-md">SignUp</li>
-          </Link>
+          </Link> */}
         </ul>
       </div>
       <div className="max-w-[1240px] mx-auto bg-white flex justify-between items-center py-1">
@@ -117,15 +117,15 @@ const Navbar = () => {
             <Link to={"/Products"}>
               <li className="mx-4 text-xl px-4 rounded-md">Products</li>
             </Link>
-            {/* <Link to={"/Dashboard"}>
+            <Link to={"/Dashboard"}>
               <li className="mx-4 text-xl px-4 rounded-md">Dashboard</li>
-            </Link> */}
+            </Link>
             <Link to={"/Login"}>
               <li className="mx-4 text-xl px-4 rounded-md">LogIn</li>
             </Link>
-            <Link to={"/SignUp"}>
+            {/* <Link to={"/SignUp"}>
               <li className="mx-4 text-xl px-4 rounded-md">Sign Up</li>
-            </Link>
+            </Link> */}
           </ul>
           <div className="lg:hidden flex mr-6" onClick={handleNav}>
             <Hamburger />
