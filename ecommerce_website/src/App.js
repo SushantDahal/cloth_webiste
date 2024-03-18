@@ -10,6 +10,7 @@ import Dashboard from "./components/Dashboard";
 import Product from "./components/products/Product";
 import Login from "./Account/Login";
 import Signup from "./Account/Signup";
+import AddTocart from "./components/products/AddToCart";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/SignUp" element={<SignUpPage />} />
           <Route path="/Products" element={<ProductSection />} />
           <Route path="/Dashboard" element={<DashboardSection />} />
+          <Route path="/Addtocart" element={<AddcartSection />} />
         </Routes>
       </Router>
     </div>
@@ -67,6 +69,14 @@ function SignUpPage() {
   return (
     <>
       <Signup />
+    </>
+  );
+}
+
+function AddcartSection() {
+  return (
+    <>
+      <AddTocart />
     </>
   );
 }

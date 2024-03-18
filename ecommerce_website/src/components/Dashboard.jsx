@@ -105,7 +105,7 @@ const Dashboard = () => {
           <div className="md:w-[80%] w-full bg-white px-4 py-2">
             <div className="">
               <div className="flex justify-between  ">
-                <h1 className="text-xl font-bold ">Overview</h1>
+                <h1 className="text-xl font-bold ml-4 ">Overview</h1>
                 <select className="bg-[#bdbbbb] py-3 md:px-4 sm:px-2 px-0 outline-none rounded-md">
                   <option>All Time</option>
                   <option>This Month</option>

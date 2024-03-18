@@ -15,10 +15,12 @@ const product = () => {
           <h1 className="bg-red text-4xl font-bold text-[red] py-3 pb-6 px-4 ">
             Available Products
           </h1>
-          <div className=" flex  mx-4  item_basket">
-            <FaCartShopping className="mx-2 " size={30} />
-            <span className="text-xl">0</span>
-          </div>
+          <Link to="/Addtocart">
+            <div className=" flex  mx-4  item_basket">
+              <FaCartShopping className="mx-2 " size={30} />
+              <span className="text-xl">0</span>
+            </div>
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-4 gap-8 py-4 mx-4 ">
