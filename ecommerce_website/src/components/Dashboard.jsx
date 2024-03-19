@@ -101,7 +101,7 @@ const Dashboard = () => {
         </div>
         {/* Dashboard */}
         <div className=" mx-2 w-[100%] min-w-[300px] px-4 bg-[#e8e1e1]">
-          <h1 className="text-3xl my-4 ml-8 text-[red] font-bold">DASHBOARD</h1>
+          <h1 className="text-3xl my-4 ml-8 text-[red] font-bold">Dashboard</h1>
           <div className="md:w-[80%] w-full bg-white px-4 py-2">
             <div className="">
               <div className="flex justify-between  ">
