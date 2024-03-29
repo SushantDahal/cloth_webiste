@@ -3,8 +3,12 @@ import { Link } from "react-router-dom";
 import Product_Card from "./Product_card";
 import product_data from "./product_data";
 import { FaCartShopping } from "react-icons/fa6";
+import { useStateValue } from "../../StateProvider";
 
-const product = () => {
+const Product = () => {
+  const [{ basket }, dispatch] = useStateValue();
+
+  const itemCount = basket.length;
   return (
     <div className="w-full bg-white">
       <Link to="/">
@@ -18,20 +22,20 @@ const product = () => {
           <Link to="/Addtocart">
             <div className=" flex  mx-4  item_basket">
               <FaCartShopping className="mx-2 " size={30} />
-              <span className="text-xl">0</span>
+              <span className="text-xl">{itemCount}</span>
             </div>
           </Link>
         </div>
 
         <div className="grid md:grid-cols-4 gap-8 py-4 mx-4 ">
-          {product_data.map((arr) => {
+          {product_data.map((item) => {
             return (
               <Product_Card
-                key={arr.id}
-                img={arr.img}
-                name={arr.name}
-                cutPrice={arr.cutPrice}
-                price={arr.price}
+                key={item.id}
+                img={item.img}
+                name={item.name}
+                cutPrice={item.cutPrice}
+                price={item.price}
               />
             );
           })}
@@ -41,4 +45,4 @@ const product = () => {
   );
 };
 
-export default product;
+export default Product;
