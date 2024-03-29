@@ -1,10 +1,21 @@
 import esewa from "../../assets/esewa.jpeg";
 import khalti from "../../assets/khalti.jpeg";
+import React from "react";
+import { useStateValue } from "../../StateProvider";
+import { getBasketTotal } from "../../Reducer";
 
-const Payment = () => {
-  const shippingPrice = 3000;
-  const vat = 300;
-  const subTotal = 2700;
+const Payment = ({ subTotal }) => {
+  const [{ basket }, dispatch] = useStateValue();
+  //   const subtotal = getBasketTotal(basket);
+  const shippingPrice = 200;
+  const vatRate = 7; // VAT rate of 7%
+
+  // Calculate VAT
+  var vat = subTotal * vatRate;
+
+  // Calculate total price
+  //   const totalPrice = subTotal + vat + shippingPrice;
+  const totalPrice = 1000;
   return (
     <div className="bg-[#565ABB] lg:col-span-1 col-span-3 mx-auto   max-h-[460px] min-h-[460px] p-4 rounded-3xl text-white  shadow-[#1b1a1a] shadow-xl">
       <h1 className="text-2xl font-bold">Card Details</h1>
@@ -56,19 +67,19 @@ const Payment = () => {
       </div>
       {/* id section end */}
       {/* Subtotal section */}
-      <div className=" mt-10 px-4">
+      <div className="mt-10 px-4">
         <div className="flex justify-between">
           <h1>Shipping</h1>
           <p>NPR {shippingPrice}</p>
         </div>
         <div className="flex justify-between my-1">
-          <h1>Total (Tax incl.)</h1>
+          <h1>Tax Amount</h1>
           <p>NPR {vat}</p>
         </div>
         <hr className="w-full h-[1px]" />
         <div className="flex justify-between pt-2">
           <h1>Subtotal</h1>
-          <p>NPR {subTotal}</p>
+          <p>{totalPrice}</p>
         </div>
       </div>
 
