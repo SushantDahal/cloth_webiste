@@ -2,12 +2,35 @@ import LoginImg from "../assets/Loginimg.png";
 import Google from "../assets/google.png";
 import Logo from "../assets/Logo.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import Validation from "./LoginValidation";
 
 const Login = () => {
+  const [errors, setErrors] = useState({});
+  const [values, setValues] = useState({
+    email: "",
+    password: "",
+  });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setErrors(Validation(values));
+  };
+
+  const handleInput = (event) => {
+    const { name, value } = event.target;
+    setValues((prev) => ({
+      ...prev,
+      [name]: value, // Update value without wrapping in array
+    }));
+  };
   return (
     <div className="w-full">
       <Link to="/">
-        <img src={Logo} alt="" className="mx-auto px-5  py-2 w-[200px] " />
+        <img
+          src={Logo}
+          alt=""
+          className="mx-auto px-5  py-2 w-[200px] animate-bounce duration-1000 "
+        />
       </Link>
       <div className="max-w-[1240px] mx-auto bg-white ">
         <div className="grid lg:grid-cols-2 ">
@@ -21,23 +44,40 @@ const Login = () => {
               </small>
             </div>
             <div className=" w-[100%]  p-2 my-2 border-b-2 mx-auto lg:mx-0">
-              <form>
+              <form action="" onSubmit={handleSubmit}>
                 <div className="flex flex-col  px-2">
-                  <label className="text-xl font-bold py-1">Email</label>
+                  <label className="text-xl font-bold py-1" htmlFor="email">
+                    Email
+                  </label>
                   <input
+                    name="email"
                     type="text"
                     placeholder="Enter Your Email"
+                    onChange={handleInput}
                     className="bg-white rounded-md py-2 my-1 outline-none px-4 border-2 border-red-100"
                   />
+                  {errors.email && (
+                    <span className="text-[red] text-xs">{errors.email}</span>
+                  )}
                 </div>
                 <div className="flex flex-col  my-4 px-2">
-                  <label className="text-xl font-bold py-1">Passsword</label>
+                  <label className="text-xl font-bold py-1" htmlFor="password">
+                    Passsword
+                  </label>
                   <input
+                    name="password"
                     type="password"
                     placeholder="Enter Your Password"
+                    onChange={handleInput}
                     className="bg-white rounded-md py-2 my-1 px-4 outline-none border-2 border-red-100"
                   />
+                  {errors.password && (
+                    <span className="text-[red] text-xs">
+                      {errors.password}
+                    </span>
+                  )}
                 </div>
+
                 <div className="flex md:flex-row justify-between mx-2 my-2  items-center">
                   <div>
                     <input
@@ -52,7 +92,10 @@ const Login = () => {
                     Forgot Password?
                   </p>
                 </div>
-                <button className="w-full bg-[red] text-white font-bold text-xl rounded-md py-2 my-3 cursor-pointer hover:bg-red-500 duration-150 ">
+                <button
+                  type="submit"
+                  className="w-full bg-[red] text-white font-bold text-xl rounded-md py-2 my-3 cursor-pointer hover:bg-red-500 duration-150 "
+                >
                   Sign In
                 </button>
                 <div className="w-full bg-[red] text-white font-bold text-xs rounded-md py-2 flex items-center cursor-pointer justify-center hover:bg-red-500 duration-150  ">
