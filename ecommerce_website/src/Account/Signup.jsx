@@ -1,21 +1,31 @@
 import LoginImg from "../assets/signUpImg.png";
 import Google from "../assets/google.png";
 import Logo from "../assets/Logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Validation from "./SignupValidation";
 import { useState } from "react";
+import axios from "axios";
 
 const Signup = () => {
   const [errors, setErrors] = useState({});
   const [values, setValues] = useState({
-    fullname: "",
+    name: "",
     email: "",
     password: "",
-    confirmPassword: "",
   });
+
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     setErrors(Validation(values));
+    if (errors.name === "" && errors.email === "" && errors.password === "") {
+      axios
+        .post("http://localhost:8081/signup", values)
+        .then((res) => {
+          navigate("/Login");
+        })
+        .catch((err) => console.log(err));
+    }
   };
 
   // const handleInput = (event) => {
@@ -48,20 +58,18 @@ const Signup = () => {
               </h1>
             </div>
             <div className=" w-[100%] p-2 my-2 border-b-2 mx-auto">
-              <form onClick={handleSubmit} action="">
+              <form onSubmit={handleSubmit} action="">
                 <div className="flex flex-col  px-2">
                   <label className="text-xl font-bold py-1">Name</label>
                   <input
-                    name="fullname"
+                    name="name"
                     type="text"
                     placeholder="First Name"
                     className="bg-white rounded-md py-2 my-1 outline-none border-2 border-red-100 px-4"
                     onChange={handleInput}
                   />
-                  {errors.fullname && (
-                    <span className="text-[red] text-xs">
-                      {errors.fullname}
-                    </span>
+                  {errors.name && (
+                    <span className="text-[red] text-xs">{errors.name}</span>
                   )}
                 </div>
                 {/* <div className="flex flex-col  px-2">

@@ -4,11 +4,11 @@ function signValidation(values) {
   // const password_pattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/;
 
   // Full Name
-  if (values.fullname === "") {
+  if (values.name === "") {
     errors.fullname = "Full name should not be empty";
-    console.log(values.fullname);
+    console.log(values.name);
   } else {
-    errors.fullname = "";
+    errors.name = "";
   }
 
   // Email
