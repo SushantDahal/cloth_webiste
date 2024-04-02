@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.png";
 import { Link as ScrollLink } from "react-scroll";
 import { Fade as Hamburger } from "hamburger-react";
+import { RiAccountCircleFill } from "react-icons/ri";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -17,7 +18,7 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? "w-[40%] lg:hidden bg-[black] text-white h-screen top-0 absolute ease-in duration-300"
+            ? "w-[50%] lg:hidden bg-[black] text-white h-screen top-0 absolute ease-in duration-300"
             : "fixed left-[-50%] ease-out duration-100"
         }
       >
@@ -67,7 +68,9 @@ const Navbar = () => {
             <li className="mx-4 text-xl px-4 rounded-md">Dashboard</li>
           </Link>
           <Link to={"/Login"}>
-            <li className="mx-4 text-xl px-4 rounded-md">LogIn</li>
+            <li className="mx-4 text-xl px-4 rounded-md">
+              <RiAccountCircleFill size={40} />
+            </li>
           </Link>
 
           {/* <Link to={"/SignUp"}>
@@ -121,7 +124,9 @@ const Navbar = () => {
               <li className="mx-4 text-xl px-4 rounded-md">Dashboard</li>
             </Link>
             <Link to={"/Login"}>
-              <li className="mx-4 text-xl px-4 rounded-md">LogIn</li>
+              <li className="mx-4 text-xl px-4 rounded-md">
+                <RiAccountCircleFill size={40} />
+              </li>
             </Link>
             {/* <Link to={"/SignUp"}>
               <li className="mx-4 text-xl px-4 rounded-md">Sign Up</li>

@@ -16,7 +16,7 @@ const db = mysql.createConnection({
 
 // sign up api
 app.post("/signup", (req, res) => {
-  const sql = "INSERT INTOLOGIN (`name`,`email`,`password`) VALUES (?)";
+  const sql = "INSERT INTO login (`name`,`email`,`password`) VALUES (?)";
   const values = [req.body.name, req.body.email, req.body.password];
 
   db.query(sql, [values], (err, data) => {
@@ -24,6 +24,24 @@ app.post("/signup", (req, res) => {
       return res.json("Error");
     }
     return res.json(data);
+  });
+});
+
+//
+//
+// LOg in api
+app.post("/login", (req, res) => {
+  const sql = "SELECT * FROM login WHERE `email` = ? AND `password` =?";
+
+  db.query(sql, [req.body.email, req.body.password], (err, data) => {
+    if (err) {
+      return res.json("Error");
+    }
+    if (data.length > 0) {
+      return res.json("Success");
+    } else {
+      return res.json("Fail");
+    }
   });
 });
 

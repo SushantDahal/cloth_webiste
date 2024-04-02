@@ -51,9 +51,9 @@ const Signup = () => {
           <div className="lg:mx-5    py-8 lg:pt-20 ">
             <img src={LoginImg} alt="" className="mx-auto" />
           </div>
-          <div className="text-black flex flex-col max-w-[1000px] ml-24 lg:my-20 my-10 ">
+          <div className="text-black flex flex-col max-w-[1000px] my-7 lg:px-6 px-10">
             <div className="px-2">
-              <h1 className="text-2xl md:text-3xl lg:text-3xl text-[red]  pb-6 font-bold   text-center  ">
+              <h1 className="text-2xl md:text-3xl lg:text-3xl text-[red]  pb-3 font-bold   text-center  ">
                 Welcome to clothLand
               </h1>
             </div>

@@ -5,7 +5,7 @@ function signValidation(values) {
 
   // Full Name
   if (values.name === "") {
-    errors.fullname = "Full name should not be empty";
+    errors.name = "Full name should not be empty";
     console.log(values.name);
   } else {
     errors.name = "";
