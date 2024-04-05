@@ -70,7 +70,7 @@ const Dashboard = () => {
                   <span className="text-xl">Home</span>
                 </li>
               </Link>
-              <Link to="/Products">
+              <Link to="/AddToProduct">
                 <li className="flex px-10 py-6 cursor-pointer hover:bg-gray-200">
                   <MdProductionQuantityLimits className="mx-2 size-8" />
                   <span className="text-xl">Products</span>

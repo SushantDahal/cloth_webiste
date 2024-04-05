@@ -13,6 +13,7 @@ const Signup = () => {
     email: "",
     password: "",
   });
+  const [successMessage, setSuccessMessage] = useState(""); // State for success message
 
   const navigate = useNavigate();
   const handleSubmit = (event) => {
@@ -22,25 +23,24 @@ const Signup = () => {
       axios
         .post("http://localhost:8081/signup", values)
         .then((res) => {
-          navigate("/Login");
+          setSuccessMessage("Registration successful"); // Set success message
+          setTimeout(() => {
+            setSuccessMessage(""); // Clear success message after 1 second
+            navigate("/Login");
+          }, 1000);
         })
         .catch((err) => console.log(err));
     }
   };
 
-  // const handleInput = (event) => {
-  //   setValues((prev) => ({
-  //     ...prev,
-  //     [event.target.name]: [event.target.value],
-  //   }));
-  // };
   const handleInput = (event) => {
     const { name, value } = event.target;
     setValues((prev) => ({
       ...prev,
-      [name]: value, // Update value without wrapping in array
+      [name]: value,
     }));
   };
+
   return (
     <div className="w-full">
       <Link to="/">
@@ -72,19 +72,6 @@ const Signup = () => {
                     <span className="text-[red] text-xs">{errors.name}</span>
                   )}
                 </div>
-                {/* <div className="flex flex-col  px-2">
-                  <label className="text-xl font-bold py-1">Last Name</label>
-                  <input
-                    name="lName"
-                    type="text"
-                    placeholder="Last Name"
-                    className="bg-white rounded-md py-2 my-1 outline-none border-2 border-red-100 px-4"
-                    onClick={handleInput}
-                  />
-                  {errors.fName && (
-                    <span className="text-[red] text-xs">{errors.fName}</span>
-                  )}
-                </div> */}
                 <div className="flex flex-col  px-2">
                   <label className="text-xl font-bold py-1">Email</label>
                   <input
@@ -113,23 +100,6 @@ const Signup = () => {
                     </span>
                   )}
                 </div>
-                {/* <div className="flex flex-col  my-4 px-2">
-                  <label className="text-xl font-bold py-1">
-                    Confirm Passsword
-                  </label>
-                  <input
-                    name="confirmPassword"
-                    type="password"
-                    placeholder="Confirm Password"
-                    className="bg-white rounded-md py-2 my-1 outline-none border-2 border-red-100 px-4"
-                    onClick={handleInput}
-                  />
-                  {errors.confirmPassword && (
-                    <span className="text-[red] text-xs">
-                      {errors.confirmPassword}
-                    </span>
-                  )}
-                </div> */}
 
                 <div className="w-full text-center ">
                   <button
@@ -141,7 +111,10 @@ const Signup = () => {
 
                   <p className="text-center text-[10px] py-2">
                     Already have an account?
-                    <span className="text-[red] cursor-pointer">Log in</span>
+                    <Link to="/Login" className="text-[red] cursor-pointer">
+                      Log in
+                    </Link>{" "}
+                    {/* Use Link for navigation */}
                   </p>
                   <h1 className="text-xl py-1">OR</h1>
                   <div className="w-[180px] border mx-auto font-bold text-xs rounded-md py-2 flex items-center cursor-pointer justify-center hover:bg-red-500 duration-150  ">
@@ -151,6 +124,11 @@ const Signup = () => {
                 </div>
               </form>
             </div>
+            {successMessage && (
+              <div className="text-green-500 text-center text-5xl px-4">
+                {successMessage}
+              </div>
+            )}
           </div>
         </div>
       </div>

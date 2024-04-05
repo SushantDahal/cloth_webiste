@@ -12,7 +12,9 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const [successMessage, setSuccessMessage] = useState("");
   const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     setErrors(Validation(values));
@@ -21,7 +23,11 @@ const Login = () => {
         .post("http://localhost:8081/login", values)
         .then((res) => {
           if (res.data === "Success") {
-            navigate("/");
+            setSuccessMessage("Login successful");
+            setTimeout(() => {
+              setSuccessMessage(""); // Clear success message after 1 second
+              navigate("/");
+            }, 1000);
           } else {
             alert("No data exist");
           }
@@ -34,9 +40,10 @@ const Login = () => {
     const { name, value } = event.target;
     setValues((prev) => ({
       ...prev,
-      [name]: value, // Update value without wrapping in array
+      [name]: value,
     }));
   };
+
   return (
     <div className="w-full">
       <Link to="/">
@@ -126,6 +133,11 @@ const Login = () => {
                 </p>
               </form>
             </div>
+            {successMessage && (
+              <div className="text-green-500 text-center text-5xl">
+                {successMessage}
+              </div>
+            )}
           </div>
           <div className="mx-auto lg:mx-5 px-5">
             <img src={LoginImg} alt="" className="" />
@@ -135,4 +147,5 @@ const Login = () => {
     </div>
   );
 };
+
 export default Login;

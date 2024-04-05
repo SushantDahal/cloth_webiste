@@ -8,6 +8,13 @@ import { useState } from "react";
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); //
+
+  const handleLogout = () => {
+    // Clear user authentication state, e.g., remove JWT token from local storage
+    setIsLoggedIn(false);
+    // Additional logic if needed, e.g., redirecting to login page
+  };
 
   function handleNav() {
     setNav(!nav);

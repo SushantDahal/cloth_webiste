@@ -11,6 +11,7 @@ import Product from "./components/products/Product";
 import Login from "./Account/Login";
 import Signup from "./Account/Signup";
 import AddTocart from "./components/products/AddToCart";
+import AddToProduct from "./components/products/AddToProduct";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/Products" element={<ProductSection />} />
           <Route path="/Dashboard" element={<DashboardSection />} />
           <Route path="/Addtocart" element={<AddcartSection />} />
+          <Route path="/AddToProduct" element={<AddProductSection />} />
         </Routes>
       </Router>
     </div>
@@ -77,6 +79,14 @@ function AddcartSection() {
   return (
     <>
       <AddTocart />
+    </>
+  );
+}
+
+function AddProductSection() {
+  return (
+    <>
+      <AddToProduct />
     </>
   );
 }

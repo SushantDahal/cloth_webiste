@@ -1,10 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql");
+const multer = require("multer");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Multer setup for handling file uploads
+const upload = multer({ dest: "uploads/" }); // Destination folder for uploaded files
 
 // MySQL Connection
 const db = mysql.createConnection({
@@ -41,6 +45,29 @@ app.post("/login", (req, res) => {
       return res.json("Success");
     } else {
       return res.json("Fail");
+    }
+  });
+});
+
+// Product api
+// Product api
+app.post("/addToCart", upload.single("image"), (req, res) => {
+  const { name, price, discountPrice } = req.body;
+  const img = req.file ? req.file.filename : null; // Get the uploaded file name
+
+  const sql =
+    "INSERT INTO product (img, name, price, cutPrice) VALUES (?, ?, ?, ?)";
+  const values = [img, name, price, discountPrice];
+
+  db.query(sql, values, (err, result) => {
+    if (err) {
+      console.error("Error adding product to cart:", err);
+      return res.status(500).json({ message: "Failed to add product to cart" });
+    } else {
+      console.log("Product added to cart:", result);
+      return res
+        .status(200)
+        .json({ message: "Product added to cart successfully" });
     }
   });
 });

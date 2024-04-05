@@ -1,8 +1,11 @@
 import { useStateValue } from "../../StateProvider";
+
+import axios from "axios";
 const Product_Card = ({ id, img, price, name, cutPrice }) => {
-  const [state, dispatch] = useStateValue();
+  const [{ basket }, dispatch] = useStateValue();
 
   const addToBasket = () => {
+    // Dispatch action to add to basket locally
     dispatch({
       type: "ADD_TO_BASKET",
       item: {
@@ -13,6 +16,22 @@ const Product_Card = ({ id, img, price, name, cutPrice }) => {
         cutPrice: cutPrice,
       },
     });
+
+    // Send a request to your backend to save the product in the database
+    axios
+      .post("http://localhost:8081/addToCart", {
+        id: id,
+        img: img,
+        name: name,
+        price: price,
+        cutPrice: cutPrice,
+      })
+      .then((response) => {
+        console.log("Product added to cart:", response.data);
+      })
+      .catch((error) => {
+        console.error("Error adding product to cart:", error);
+      });
   };
   return (
     <div className="bg-white shadow-black shadow-xl">
